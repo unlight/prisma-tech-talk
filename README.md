@@ -10,3 +10,4 @@
 * https://www.prisma.io/docs/understand-prisma/under-the-hood
 * https://www.youtube.com/watch?v=WSyaBOAZFZY
 * https://www.youtube.com/watch?v=NZpawq8eJOc - Founder Keynote - Johannes Schickling @ PrismaDay 2019
+* https://www.youtube.com/watch?v=tw1E9vVYWa8
