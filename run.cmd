@@ -1,1 +1,1 @@
-http-server -o -c-1
+http-server -o presentation.html -c-1
