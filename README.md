@@ -15,12 +15,16 @@
 
 ## Resources
 
+-   https://github.com/prisma/prisma
 -   https://www.prisma.io/blog/comparing-sql-query-builders-and-orms-dkuixe3aa5a2 - Comparing SQL, Query Builders, and ORMs
 -   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/under-the-hood
 -   https://www.youtube.com/watch?v=WSyaBOAZFZY - Prisma 2 in Action - Matt Mueller @ PrismaDay 2019
 -   https://www.youtube.com/watch?v=NZpawq8eJOc - Founder Keynote - Johannes Schickling @ PrismaDay 2019
 -   https://www.youtube.com/watch?v=tw1E9vVYWa8 - Prisma 2 Beta
+-   https://www.youtube.com/watch?v=3Pxj-4IrOcs - Should you use Sequelize, TypeORM, or Prisma?
+-   https://www.youtube.com/watch?v=OloBAdNCnyQ - Code first GraphQL Server Development with Prisma — Nikolas Burk @ GraphQL Conf 2019
+-   https://www.youtube.com/watch?v=eH5mleAvnms - Prisma 2 Sneak Peak
 
 ## FAQ
 

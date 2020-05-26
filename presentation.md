@@ -1,7 +1,11 @@
-class: center, middle, inverse
-# Prisma Overview
+<!-- prettier-ignore-start -->
+<!-- class: center, middle, no-inverse -->
+# Overview
 .footnote[2020]
+
 ---
+
+class: no-inverse
 # Contents
 * Comparison of tools
 * What is Prisma Framework
@@ -9,5 +13,8 @@ class: center, middle, inverse
 * Integration with TypeGraphQL / NestJS
 
 ???
-Сегодня будет обзор фрейморка prisma версии 2
+Сегодня будет обзор фрейморка prisma версии 2 статус которой бета 5.
+
 ---
+
+<!-- prettier-ignore-end -->
