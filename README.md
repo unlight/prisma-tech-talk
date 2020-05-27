@@ -25,6 +25,9 @@
 -   https://www.youtube.com/watch?v=3Pxj-4IrOcs - Should you use Sequelize, TypeORM, or Prisma?
 -   https://www.youtube.com/watch?v=OloBAdNCnyQ - Code first GraphQL Server Development with Prisma — Nikolas Burk @ GraphQL Conf 2019
 -   https://www.youtube.com/watch?v=eH5mleAvnms - Prisma 2 Sneak Peak
+-   https://www.codemochi.com/blog/2019-06-26-prisma-2-sneak-peak
+-   https://itnext.io/lets-take-prisma-2-for-a-test-drive-on-aws-lambda-with-graphql-%EF%B8%8F-f4be711e93cc - Lets take Prisma 2 for a test drive on AWS Lambda with GraphQL
+-   https://medium.com/@abhiaiyer/prisma-client-101-5eed06eee1fa - About Prisma 1
 
 ## FAQ
 
