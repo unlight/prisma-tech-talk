@@ -15,7 +15,9 @@
 
 ## Resources
 
+-   https://isprisma2ready.com/
 -   https://github.com/prisma/prisma
+-   https://www.prisma.io/docs/getting-started/quickstart-typescript
 -   https://www.prisma.io/blog/comparing-sql-query-builders-and-orms-dkuixe3aa5a2 - Comparing SQL, Query Builders, and ORMs
 -   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/under-the-hood
