@@ -2,6 +2,8 @@
 
 # Prisma Framework Overview
 
+![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg)
+
 .footnote[2020]
 
 ---
