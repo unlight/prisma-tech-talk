@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    "outDir": "dist",
+    "pretty": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "declaration": false,
+    "declarationMap": false,
+    "skipLibCheck": true,
+    "lib": ["esnext"]
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
