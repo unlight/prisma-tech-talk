@@ -7,6 +7,10 @@
 -   Comparison of tools
 -   What is Prisma Framework
 -   How it works
+-   Schema.Prisma
+-   Example of user.findOne (type safe)
+-   Example of write operations (with connect)
+-   Aggregation example
 -   Integration with TypeGraphQL / NestJS
 
 ## Prisma
@@ -31,6 +35,9 @@
 -   https://www.codemochi.com/blog/2019-06-26-prisma-2-sneak-peak
 -   https://itnext.io/lets-take-prisma-2-for-a-test-drive-on-aws-lambda-with-graphql-%EF%B8%8F-f4be711e93cc - Lets take Prisma 2 for a test drive on AWS Lambda with GraphQL
 -   https://medium.com/@abhiaiyer/prisma-client-101-5eed06eee1fa - About Prisma 1
+-   https://www.youtube.com/watch?v=jAxE8z6xpl8 - Prisma 2: Modern database tools for Node.js and TypeScript
+-   https://www.youtube.com/watch?v=NSk9NfeJCd8 - Getting Started With Prisma 2
+-   https://www.opencrud.org/
 
 ## FAQ
 
@@ -48,3 +55,13 @@ https://github.com/prisma/prisma/issues/1277
 
 Not a goal for the beta, optimization will be later
 https://github.com/prisma/prisma/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+performance
+
+#### Transactions
+
+https://github.com/prisma/prisma-client-js/issues/667
+https://github.com/prisma/prisma/issues/1844
+Use write operations with `connect`
+
+#### Multiple schema files
+
+https://github.com/prisma/prisma/issues/2377
