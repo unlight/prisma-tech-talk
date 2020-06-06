@@ -26,6 +26,9 @@
 -   https://www.prisma.io/blog/comparing-sql-query-builders-and-orms-dkuixe3aa5a2 - Comparing SQL, Query Builders, and ORMs
 -   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/under-the-hood
+-   https://softwareengineeringdaily.com/2020/06/04/prisma-modern-database-tooling-with-johannes-schickling/ - Prisma: Modern Database Tooling with Johannes Schickling
+    -   https://softwareengineeringdaily.com/wp-content/uploads/2020/06/SED1083-Prisma.pdf
+    -   https://hwcdn.libsyn.com/p/0/f/9/0f9e125d938f983a/2020_06_04_Prisma.mp3?c_id=74752949
 -   https://www.youtube.com/watch?v=WSyaBOAZFZY - Prisma 2 in Action - Matt Mueller @ PrismaDay 2019
 -   https://www.youtube.com/watch?v=NZpawq8eJOc - Founder Keynote - Johannes Schickling @ PrismaDay 2019
 -   https://www.youtube.com/watch?v=tw1E9vVYWa8 - Prisma 2 Beta
