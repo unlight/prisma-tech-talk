@@ -4,7 +4,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false,
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false,
@@ -16,7 +16,7 @@
     "declaration": false,
     "declarationMap": false,
     "skipLibCheck": true,
-    "lib": ["esnext"]
+    "lib": ["esnext", "dom"]
   },
   "ts-node": {
     "transpileOnly": true,

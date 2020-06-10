@@ -21,10 +21,10 @@
 
 -   https://isprisma2ready.com/
 -   https://github.com/prisma/prisma
+-   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/introduction
 -   https://www.prisma.io/docs/getting-started/quickstart-typescript
 -   https://www.prisma.io/blog/comparing-sql-query-builders-and-orms-dkuixe3aa5a2 - Comparing SQL, Query Builders, and ORMs
--   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/under-the-hood
 -   https://softwareengineeringdaily.com/2020/06/04/prisma-modern-database-tooling-with-johannes-schickling/ - Prisma: Modern Database Tooling with Johannes Schickling
     -   https://softwareengineeringdaily.com/wp-content/uploads/2020/06/SED1083-Prisma.pdf
@@ -41,6 +41,7 @@
 -   https://www.youtube.com/watch?v=jAxE8z6xpl8 - Prisma 2: Modern database tools for Node.js and TypeScript
 -   https://www.youtube.com/watch?v=NSk9NfeJCd8 - Getting Started With Prisma 2
 -   https://www.opencrud.org/
+-   https://github.com/AhmedElywa/prisma-tools
 
 ## FAQ
 
@@ -68,3 +69,12 @@ Use write operations with `connect`
 #### Multiple schema files
 
 https://github.com/prisma/prisma/issues/2377
+
+#### Atomic operations
+
+https://github.com/prisma/prisma-client-js/issues/655
+
+#### ORM can resolve n + 1 problem too
+
+https://mikro-orm.io/docs/nested-populate
+Yes, but no type safety in this example.
