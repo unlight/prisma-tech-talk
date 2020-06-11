@@ -42,6 +42,11 @@
 -   https://www.youtube.com/watch?v=NSk9NfeJCd8 - Getting Started With Prisma 2
 -   https://www.opencrud.org/
 -   https://github.com/AhmedElywa/prisma-tools
+-   https://github.com/BuildingXwithJS/exploring-prisma
+    -   https://www.youtube.com/watch?v=mxUVBde8mDQ - BxJS - What is Prisma.io? Exploring database toolkit
+-   https://github.com/catalinmiron/awesome-prisma
+-   https://github.com/topics/prisma?o=desc&s=updated
+-   https://github.com/topics/prisma2?o=desc&s=updated
 
 ## FAQ
 
@@ -78,3 +83,6 @@ https://github.com/prisma/prisma-client-js/issues/655
 
 https://mikro-orm.io/docs/nested-populate
 Yes, but no type safety in this example.
+
+https://github.com/typeorm/typeorm/blob/master/docs/eager-and-lazy-relations.md
+In this example I must define it as column definition, what if need both lazy and eager...

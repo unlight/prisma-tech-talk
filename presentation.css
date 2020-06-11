@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+html {
+    font-size: 24px;
+}
+
 @media print {
     .remark-slide-scaler {
         width: 100% !important;
@@ -17,7 +21,12 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
+    font-size: 1rem;
+}
+
+ul {
+    padding-inline-start: 1.125rem;
+    list-style-type: square;
 }
 
 img {
@@ -44,9 +53,18 @@ h1 {
     column-count: 2;
 }
 
-.flex {
-    display: flex;
-    margin-top: 1em;
+.grid {
+    display: grid;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.grid-column-1 {
+    grid-column: 1;
+}
+
+.grid-column-2 {
+    grid-column: 2;
 }
 
 .w-1of2 {
