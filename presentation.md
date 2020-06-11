@@ -2,7 +2,9 @@
 
 # Prisma Framework Overview
 
-![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg)
+<!-- ![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg) -->
+
+![](./images/logo-b.png)
 
 .footnote[2020]
 
@@ -139,7 +141,7 @@ knex('users')
 QB добавляет уровень уровень абстракции к БД, и формально мы уже пишем на javascript-е.
 Т.е. вместо спецификаторов в SQL строке, мы используем методы select, join и т.д.
 Но все равно, мы должны держать в уме структуру БД, имена колонок, первичных ключей, внешних ключей.
-(Левая колонка это фичи, не достоинства)
+(Левая колонка это фичи, не достоинства/преимущества)
 
 ---
 
