@@ -12,6 +12,7 @@
 -   Example of write operations (with connect)
 -   Aggregation example
 -   Integration with TypeGraphQL / NestJS
+-   Competitors
 
 ## Prisma
 
@@ -26,6 +27,7 @@
 -   https://www.prisma.io/docs/getting-started/quickstart-typescript
 -   https://www.prisma.io/blog/comparing-sql-query-builders-and-orms-dkuixe3aa5a2 - Comparing SQL, Query Builders, and ORMs
 -   https://www.prisma.io/docs/understand-prisma/under-the-hood
+-   https://www.prisma.io/blog/prisma-2-beta-b7bcl0gd8d8e/
 -   https://softwareengineeringdaily.com/2020/06/04/prisma-modern-database-tooling-with-johannes-schickling/ - Prisma: Modern Database Tooling with Johannes Schickling
     -   https://softwareengineeringdaily.com/wp-content/uploads/2020/06/SED1083-Prisma.pdf
     -   https://hwcdn.libsyn.com/p/0/f/9/0f9e125d938f983a/2020_06_04_Prisma.mp3?c_id=74752949
@@ -47,6 +49,7 @@
 -   https://github.com/catalinmiron/awesome-prisma
 -   https://github.com/topics/prisma?o=desc&s=updated
 -   https://github.com/topics/prisma2?o=desc&s=updated
+-   https://github.com/hexrcs/fullstack-graphql-next-nexus-prisma
 
 ## FAQ
 
@@ -86,3 +89,7 @@ Yes, but no type safety in this example.
 
 https://github.com/typeorm/typeorm/blob/master/docs/eager-and-lazy-relations.md
 In this example I must define it as column definition, what if need both lazy and eager...
+
+#### Why ORM is Partial Typesafety
+
+https://sequelize.org/master/manual/typescript.html#usage (bottom)

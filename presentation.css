@@ -24,6 +24,14 @@ body {
     font-size: 1rem;
 }
 
+a {
+    color: inherit;
+}
+
+a:visit {
+    color: inherit;
+}
+
 ul {
     padding-inline-start: 1.125rem;
     list-style-type: square;
@@ -31,6 +39,10 @@ ul {
 
 img {
     max-width: 100%;
+}
+
+.pointer-events-none {
+    pointer-events: none;
 }
 
 .image80 img {
@@ -98,7 +110,7 @@ h1 {
 
 .footnote {
     position: absolute;
-    bottom: 3em;
+    bottom: 2rem;
 }
 
 .remark-slide-content {

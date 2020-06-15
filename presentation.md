@@ -2,9 +2,9 @@
 
 # Prisma Framework Overview
 
-<!-- ![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg) -->
+![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg)
 
-![](./images/logo-b.png)
+<!-- ![](./images/logo-b.png) -->
 
 .footnote[2020]
 
@@ -14,35 +14,12 @@ class: no-inverse
 
 # Contents
 
--   What is Prisma Framework
--   Comparison of tools
--   How it works
--   Integration with TypeGraphQL / NestJS
+<!-- TODO -->
 
 ???
 Сегодня будет обзор фрейморка prisma версии 2.
 Если вы что-то слышали о версии 1, то можете забыть о ней,
 как будто она никогда не существовала.
-
----
-
-# What is Prisma?
-
-Prisma is an open source database toolkit. It mainly consists of the following parts
-
--   **Prisma Client** - Auto-generated and type-safe query builder for Node.js & TypeScript
--   **Prisma Migrate** (experimental) - Declarative data modeling & migration system
--   **Prisma Studio** (experimental) - GUI to view and edit data in your database
-
-???
-
-Призма, призма фреймворк, это семейство инстурументов для работы с базой данных, которое включает:
-Prisma Client - клиент для подключения к БД, Prisma Migrate - инструмент для миграции данных,
-Prisma Studio - приложение для манипулирования данными напрямую в БД, что-то вроде
-SQL Management Studio.
-
-Сами авторы не относят свой инструмент, ни к ORM, ни к query-builder-у.
-Давайте послушаем доклад, и попытаемся понять почему.
 
 ---
 
@@ -147,4 +124,76 @@ QB добавляет уровень уровень абстракции к БД
 
 # ORM
 
+Object relational mapper, define your application models as classes
+
+.grid.p-mt-0[
+.grid-column-1[
+
+**Benefits**
+
+-   Programming Oriented
+-   High Level of Abstraction
+-   High Productivity
+
+]
+
+.grid-column-2[
+
+**Drawbacks**
+
+-   Low Control
+-   [Object-Relational Impedance Mismatch](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch)
+-   May Generate Complicated Queries ([N+1 Problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping))
+-   Type Unsafety for Partial Database Queries
+
+]
+]
+
 ???
+В ORM мы абстрагируемся и работаем с сущностями, которые являются частью нашего приложения.
+Продуктивность выше.
+Еще преимущество, то что теперь не надо знать о стуктуре БД,
+как правило, в ORM есть инструменты миграции, они все сгенерируют.
+
+Из _недостатки_, у нас нет полного контроля над БД,
+реализация скрыта, мы не знаем там происходит внутри,
+ORM может сгенерировать сложные (непроизводительные запросы) запросы.
+N+1 проблема.
+В некоторых случаях некорректная типизация (в случае TypeScript)
+
+---
+
+# What is Prisma?
+
+Prisma is an open source database toolkit. It mainly consists of the following parts
+
+-   **Prisma Client** - Auto-generated and type-safe query builder for Node.js & TypeScript
+-   **Prisma Migrate** (experimental) - Declarative data modeling & migration system
+-   **Prisma Studio** (experimental) - GUI to view and edit data in your database
+
+???
+
+Призма, призма фреймворк, это семейство инстурументов для работы с базой данных, которое включает:
+Prisma Client - клиент для подключения к БД, Prisma Migrate - инструмент для миграции данных,
+Prisma Studio - приложение для манипулирования данными напрямую в БД, что-то вроде
+SQL Management Studio.
+
+Сами авторы не относят свой инструмент, ни к ORM, ни к query-builder-у.
+Давайте послушаем доклад, и попытаемся понять почему.
+
+---
+
+# Prisma
+
+-   **Thinking in objects** instead of mapping relational data
+-   **Queries not classes** to avoid complex model objects
+-   **Single source of truth** for database and application models
+-   **Healthy constraints** that prevent common pitfalls and antipatterns
+-   **An abstraction that make the right thing easy** ("pit of success")
+-   **Type-safe database queries** that can be validated at compile time
+-   **Less boilerplate** so developers can focus on the important parts of their app
+-   **Auto-completion in code editors** instead of needing to look up documentation
+
+???
+
+---
