@@ -2,7 +2,7 @@
 
 # Prisma Framework Overview
 
-![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg)
+<!-- ![Prisma Logo](https://cdn.worldvectorlogo.com/logos/prisma-2.svg) -->
 
 <!-- ![](./images/logo-b.png) -->
 
@@ -17,11 +17,12 @@ class: no-inverse
 <!-- TODO -->
 
 ???
+Сегодня мы в основном поговорим о фреймворке prisma, и как с помощью него работать с базой данных.
 Сегодня будет обзор фрейморка prisma версии 2.
 Если вы что-то слышали о версии 1, то можете забыть о ней,
 как будто она никогда не существовала.
 
----
+<!-- ---
 
 # Comparison of tools
 
@@ -31,7 +32,7 @@ class: no-inverse
 
 ???
 
-Сначала, давайте посмотрим, какие существуют способы работы с БД.
+Сначала, давайте посмотрим, какие существуют способы работы с БД. -->
 
 ---
 
@@ -82,7 +83,7 @@ _Недостатки_ такого способа.
 
 # Query Builder
 
-Adds a layer of abstraction above raw database-native querying (e.g. `knex.js`)
+Adds a layer of abstraction above raw database-native querying (e.g.&nbsp;`knex.js`)
 
 ```js
 knex('users')
@@ -163,11 +164,11 @@ N+1 проблема.
 
 ---
 
-# What is Prisma?
+# Prisma
 
-Prisma is an open source database toolkit. It mainly consists of the following parts
+Next-generation database tooling
 
--   **Prisma Client** - Auto-generated and type-safe query builder for Node.js & TypeScript
+-   **Prisma Client** - A type-safe database client for efficient and safe database access
 -   **Prisma Migrate** (experimental) - Declarative data modeling & migration system
 -   **Prisma Studio** (experimental) - GUI to view and edit data in your database
 
@@ -178,22 +179,67 @@ Prisma Client - клиент для подключения к БД, Prisma Migra
 Prisma Studio - приложение для манипулирования данными напрямую в БД, что-то вроде
 SQL Management Studio.
 
-Сами авторы не относят свой инструмент, ни к ORM, ни к query-builder-у.
-Давайте послушаем доклад, и попытаемся понять почему.
-
 ---
 
-# Prisma
+# Prisma Client
 
--   **Thinking in objects** instead of mapping relational data
--   **Queries not classes** to avoid complex model objects
--   **Single source of truth** for database and application models
--   **Healthy constraints** that prevent common pitfalls and antipatterns
--   **An abstraction that make the right thing easy** ("pit of success")
--   **Type-safe database queries** that can be validated at compile time
--   **Less boilerplate** so developers can focus on the important parts of their app
--   **Auto-completion in code editors** instead of needing to look up documentation
+![](./images/prisma-client.png)
 
 ???
+Сами авторы не относят свой инструмент, ни к ORM, ни к query-builder-у.
+Это нечто близкое query builder-у, но также имеющую фичи ORM - такие как декларативно запрашивать данные.
+
+Чем же призма принципиально отличается от существующих инструментов?
 
 ---
+
+# How it works
+
+![](./images/prisma-engines.png)
+
+???
+Ваш код (из node.js) больше не работает с БД напрямую,
+а через Query Engine,
+Query Engine - исполняемый файл который написан на языке Rust.
+nodejs (prisma client) отправляет запрос какие данные мы хотим получить в rust binary (query engine),
+rust binary (query engine) конвертирует его в SQL запрос и выполняет к базе данных.
+
+---
+
+# Data Model
+
+-   Manually writing the data model and mapping it to the database with Prisma Migrate
+-   Generating the data model from introspecting a database
+
+```
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+}
+```
+
+???
+Вместо моделей базы данных, как классов или объектов.
+Есть 2 опции:
+
+1. описать модели в схема файле с синтаксисом похожим на graphql
+2. просканировать существующую бд и получить этот файл
+
+-   https://www.prisma.io/docs/understand-prisma/data-modeling
+
+---
+
+<!--
+generate types and cleint based on this model
+--->

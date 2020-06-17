@@ -50,6 +50,8 @@
 -   https://github.com/topics/prisma?o=desc&s=updated
 -   https://github.com/topics/prisma2?o=desc&s=updated
 -   https://github.com/hexrcs/fullstack-graphql-next-nexus-prisma
+-   https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5
+-   https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5#why-prisma-is-not-like-existing-db-tools--orms
 
 ## FAQ
 
@@ -93,3 +95,8 @@ In this example I must define it as column definition, what if need both lazy an
 #### Why ORM is Partial Typesafety
 
 https://sequelize.org/master/manual/typescript.html#usage (bottom)
+
+#### Why middleware as query engine is needed
+
+Possible, to make prisma framework language indepedent, having such query engine allow to create
+prisma cient for another language.
