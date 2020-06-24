@@ -52,6 +52,7 @@
 -   https://github.com/hexrcs/fullstack-graphql-next-nexus-prisma
 -   https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5
 -   https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5#why-prisma-is-not-like-existing-db-tools--orms
+-   https://www.youtube.com/watch?v=Bqacj0iOL68 - Building a Backend for React with Next.js, Prisma 2, and Postgres
 
 ## FAQ
 
