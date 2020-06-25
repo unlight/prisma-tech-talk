@@ -75,7 +75,8 @@ https://github.com/prisma/prisma/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-de
 
 https://github.com/prisma/prisma-client-js/issues/667
 https://github.com/prisma/prisma/issues/1844
-Use write operations with `connect`
+Use write operations with `connect`  
+Since 2.1.0 available as experimrntal feature (explicit transactions)
 
 #### Multiple schema files
 

@@ -6,7 +6,6 @@
   "main": "index.js",
   "scripts": {
     "g": "prisma generate",
-    "migrate": "prisma migrate --experimental",
     "migrate": "prisma introspect"
   },
   "repository": {
@@ -21,8 +20,8 @@
   },
   "homepage": "https://github.com/unlight/prisma-tech-talk#readme",
   "devDependencies": {
-    "@prisma/cli": "^2.0.1",
-    "@prisma/client": "^2.0.1",
+    "@prisma/cli": "^2.1.1",
+    "@prisma/client": "^2.1.1",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
