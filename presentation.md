@@ -63,7 +63,7 @@ SQL Management Studio.
 
 Examples are `pg` or `mysql` modules
 
-```javascript
+```js
 const { Client } = require('pg');
 const client = new Client();
 await client.connect();
@@ -251,6 +251,57 @@ model User {
 
 ---
 
-<!--
-generate types and cleint based on this model
---->
+## Examples of querying
+
+```js
+const user = await prisma.user.findOne({ where: { id: 1 } });
+console.log('user.email', user.email);
+```
+
+```js
+export type UserWhereUniqueInput = {
+    id?: number,
+    email?: string,
+};
+```
+
+???
+Где-то внутри будет сгенерирован тип `UserWhereUniqueInput`
+Т.е. никакой `name` в Where передать нельзя, потому согласно схеме у нас id - это идентификатор,
+а email - уникальный.
+
+---
+
+## Examples of querying
+
+```js
+const user = await prisma.user.findOne({
+    where: { id: 1 },
+    select: { id: true, name: true },
+});
+// Compile time error:
+// Property 'email' does not exist on type '{ id: number; name: string; }'
+console.log('user.email', user.email);
+```
+
+???
+Допустим я хочу выбрать не весь объект, а только некоторые его поля.
+Я указываю их в свойстве `select`
+И если я попытаюсь, обратится к свойству которое я не указал, я сразу же получаю при компиляции.
+
+---
+
+## Examples of querying
+
+```js
+const user = await prisma.user.findOne({
+    where: { id: 1 },
+    include: { posts: true },
+});
+
+const user: User & {
+    posts: Post[];
+}
+```
+
+???

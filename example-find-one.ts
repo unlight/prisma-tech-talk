@@ -15,4 +15,10 @@ const prisma = new PrismaClient();
         // Compile time error: Property 'email' does not exist on type '{ id: number; name: string; }'.
         console.log('user.email', user.email);
     }
+    {
+        const user = await prisma.user.findOne({
+            where: { id: 1 },
+            include: { posts: true },
+        });
+    }
 })();
