@@ -17,7 +17,8 @@ const prisma = new PrismaClient();
     await prisma.post.create({
         data: {
             title: 'Anklebone',
-            content: 'anklebone vacuolate tamelessly teachably palatalize obnoxious',
+            content:
+                'anklebone vacuolate tamelessly teachably palatalize obnoxious',
             published: true,
             author: {
                 connect: {

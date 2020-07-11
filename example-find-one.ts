@@ -21,4 +21,16 @@ const prisma = new PrismaClient();
             include: { posts: true },
         });
     }
+    {
+        const user = await prisma.user.findOne({
+            where: { id: 1 },
+            include: {
+                posts: {
+                    select: { id: true },
+                    where: { id: 123 },
+                    include: { author: true },
+                },
+            },
+        });
+    }
 })();
