@@ -56,7 +56,7 @@
 -   https://youtu.be/BqztLbj_cN4
     00:58:45 - Welcome  
     01:03:05 - Keynote  
-    01:15:40 - Prisma 2.0: Productivity and Confidence for your database  
+    01:15:40 - [Prisma 2.0: Productivity and Confidence for your database](https://www.youtube.com/watch?v=avpNAeWKgtM)
     01:49:50 - Happy Table Friends: Relations in Prisma  
     02:33:37 - Data Discovery with Studio  
     02:40:57 - Showcase: Building a Calendar App with Prisma  

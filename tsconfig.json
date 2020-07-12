@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "strict": false,
+    "strictNullChecks": false,
     "noImplicitAny": false,
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false,

@@ -24,11 +24,16 @@ const prisma = new PrismaClient();
     {
         const user = await prisma.user.findOne({
             where: { id: 1 },
-            include: {
+            select: {
+                email: true,
                 posts: {
-                    select: { id: true },
-                    where: { id: 123 },
-                    include: { author: true },
+                    select: {
+                        title: true,
+                        author: {
+                            select: { name: true },
+                        },
+                    },
+                    where: { title: 'hello' },
                 },
             },
         });

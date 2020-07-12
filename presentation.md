@@ -328,3 +328,37 @@ const user: User & {
 ```
 
 ???
+
+---
+
+# Deep nested
+
+```js
+const user = await prisma.user.findOne({
+    where: { id: 1 },
+    select: {
+        email: true,
+        posts: {
+            select: {
+                title: true,
+                author: {
+                    select: { name: true },
+                },
+            },
+            where: { title: 'hello' },
+        },
+    },
+});
+
+const user: {
+    email: string;
+    posts: {
+        title: string;
+        author: {
+            name: string;
+        };
+    }[];
+}
+```
+
+???
