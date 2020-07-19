@@ -63,7 +63,7 @@ SQL Management Studio.
 
 Examples are `pg` or `mysql` modules
 
-```js
+```javascript
 const { Client } = require('pg');
 const client = new Client();
 await client.connect();
@@ -110,7 +110,7 @@ _Недостатки_ такого способа.
 
 Adds a layer of abstraction above raw database-native querying (e.g.&nbsp;`knex.js`)
 
-```js
+```javascript
 knex('users')
     .join('contacts', 'users.id', '=', 'contacts.user_id')
     .select('users.id', 'contacts.phone');
@@ -220,6 +220,13 @@ rust binary (query engine) конвертирует его в SQL запрос �
 -   Generating the data model from introspecting a database
 
 ```
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+}
+
 model Post {
   id        Int      @id @default(autoincrement())
   title     String
@@ -227,13 +234,6 @@ model Post {
   published Boolean  @default(false)
   author    User?    @relation(fields: [authorId], references: [id])
   authorId  Int?
-}
-
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  posts     Post[]
 }
 ```
 
@@ -257,7 +257,7 @@ model User {
 npx prisma generate
 ```
 
-```js
+```javascript
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -276,12 +276,12 @@ await prisma.disconnect();
 
 # Querying
 
-```js
+```javascript
 const user = await prisma.user.findOne({ where: { id: 1 } });
 console.log('user.email', user.email);
 ```
 
-```js
+```javascript
 export type UserWhereUniqueInput = {
     id?: number,
     email?: string,
@@ -297,9 +297,9 @@ export type UserWhereUniqueInput = {
 
 # Partial querying
 
-```js
+```javascript
 const user = await prisma.user.findOne({
-    where: { id: 1 },
+    where: { id: 42 },
     select: { id: true, name: true },
 });
 // Compile time error:
@@ -316,49 +316,49 @@ console.log('user.email', user.email);
 
 # Nested querying
 
-```js
-const user = await prisma.user.findOne({
-    where: { id: 1 },
-    include: { posts: true },
+```javascript
+const postsByAuthorWithAuthorInfo = await prisma.post.findMany({
+    where: {
+        author: { id: 42 },
+    },
+    include: {
+        author: true,
+    },
 });
 
-const user: User & {
-    posts: Post[];
-}
+const postsByAuthorWithAuthorInfo: (Post & {
+    author: User;
+})[];
 ```
 
 ???
 
 ---
 
-# Deep nested
+# findMany()
 
-```js
-const user = await prisma.user.findOne({
-    where: { id: 1 },
-    select: {
-        email: true,
-        posts: {
-            select: {
-                title: true,
-                author: {
-                    select: { name: true },
-                },
-            },
-            where: { title: 'hello' },
-        },
-    },
-});
+```javascript
+const allUsers = await prisma.user.findMany(args);
+```
 
-const user: {
-    email: string;
-    posts: {
-        title: string;
-        author: {
-            name: string;
-        };
-    }[];
-}
+```javascript
+/**
+ * User findMany
+ */
+export type FindManyUserArgs = {
+    select?: UserSelect | null, // Select specific fields to fetch from the User
+    include?: UserInclude | null, // Choose, which related nodes to fetch as well.
+    where?: UserWhereInput, // Filter, which Users to fetch.
+    orderBy?: UserOrderByInput, // Determine the order of the Users to fetch.
+    cursor?: UserWhereUniqueInput, // Sets the position for listing Users.
+    take?: number, // The number of Users to fetch. If negative number, it will take Users before the `cursor`.
+    skip?: number, // Skip the first `n` Users.
+};
 ```
 
 ???
+Помимо условий, какие поля выбрать, в findMany() есть дополнительные
+параметры - order by - сортировка?
+cursor - для ключи для cursor пагинации
+take - сколько первых лимит в терминах sql
+skip - offset в терминах sql
