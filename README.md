@@ -54,22 +54,23 @@
 -   https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5#why-prisma-is-not-like-existing-db-tools--orms
 -   https://www.youtube.com/watch?v=Bqacj0iOL68 - Building a Backend for React with Next.js, Prisma 2, and Postgres
 -   https://youtu.be/BqztLbj_cN4
-    00:58:45 - Welcome  
-    01:03:05 - Keynote  
-    01:15:40 - [Prisma 2.0: Productivity and Confidence for your database](https://www.youtube.com/watch?v=avpNAeWKgtM)
-    01:49:50 - Happy Table Friends: Relations in Prisma  
-    02:33:37 - Data Discovery with Studio  
-    02:40:57 - Showcase: Building a Calendar App with Prisma  
-    02:49:20 - Serverless Prisma 2 with GCP Cloud Run  
-    3:31:49 - How Prisma Solves the N+1 Problem in GraphQL Resolvers  
-    04:07:24 - Showcase: Prisma Admin React Component  
-    04:13:37 - Prisma VSCode Extension  
-    04:18:50 - Type-Safety Beyond TypeScript  
-    04:24:54 - Showcase: Accessing Databases using NestJS with Prisma  
-    04:47:30 - RedwoodJS: Bringing Full-Stack to the Jamstack  
-    05:22:09 - Blitz: the Full-Stack React Framework  
-    05:58:42 - The Jamstack and Your Data  
-    06:37:42 - Closing
+    -   00:58:45 - Welcome
+    -   01:03:05 - Keynote
+    -   01:15:40 - [Prisma 2.0: Productivity and Confidence for your database](https://www.youtube.com/watch?v=avpNAeWKgtM)
+    -   01:49:50 - Happy Table Friends: Relations in Prisma
+    -   02:33:37 - Data Discovery with Studio
+    -   02:40:57 - Showcase: Building a Calendar App with Prisma
+    -   02:49:20 - Serverless Prisma 2 with GCP Cloud Run
+    -   03:31:49 - How Prisma Solves the N+1 Problem in GraphQL Resolvers
+        -   https://github.com/timsuchanek/n-plus-one
+    -   04:07:24 - Showcase: Prisma Admin React Component
+    -   04:13:37 - Prisma VSCode Extension
+    -   04:18:50 - Type-Safety Beyond TypeScript
+    -   04:24:54 - Showcase: Accessing Databases using NestJS with Prisma
+    -   04:47:30 - RedwoodJS: Bringing Full-Stack to the Jamstack
+    -   05:22:09 - Blitz: the Full-Stack React Framework
+    -   05:58:42 - The Jamstack and Your Data
+    -   06:37:42 - Closing
 
 ## FAQ
 
@@ -113,7 +114,8 @@ In this example I must define it as column definition, what if need both lazy an
 
 #### Why ORM is Partial Typesafety
 
-https://sequelize.org/master/manual/typescript.html#usage (bottom)
+https://sequelize.org/master/manual/typescript.html#usage (bottom,
+before "Usage without strict types for attributes" section, spot "!")
 
 #### Why middleware as query engine is needed
 
