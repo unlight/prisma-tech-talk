@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
@@ -13,7 +13,7 @@
     "pretty": true,
     "esModuleInterop": true,
     "removeComments": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "declarationMap": false,
     "skipLibCheck": true,

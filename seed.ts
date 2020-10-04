@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 (async () => {
     console.log('Seeding...');
-    await prisma.connect();
+    await prisma.$connect();
 
     // Users
     const ivan = await prisma.user.create({
@@ -28,5 +28,5 @@ const prisma = new PrismaClient();
         },
     });
 
-    await prisma.disconnect();
+    await prisma.$disconnect();
 })();

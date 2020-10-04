@@ -24,7 +24,8 @@ class: no-inverse
 
 ???
 Сегодня я расскажу о новом типе инструмента для работы с базой данных
-точнее о семействе инструментов, которые объединены во фреймворках под названием Призма.
+точнее о семействе инструментов, которые объединены во фреймворках
+под названием Призма.
 
 ---
 
@@ -32,16 +33,20 @@ class: no-inverse
 
 Next-generation database tooling
 
--   **Prisma Client** - A type-safe database client for efficient and safe database access
--   **Prisma Migrate** (experimental) - Declarative data modeling & migration system
--   **Prisma Studio** (experimental) - GUI to view and edit data in your database
+-   **Prisma Client** - A type-safe database client for efficient
+    and safe database access
+-   **Prisma Migrate** (experimental) - Declarative data modeling
+    & migration system
+-   **Prisma Studio** - GUI to view and edit data in your database
 
 ???
 
-Призма, призма фреймворк, это семейство инстурументов для работы с базой данных, которое включает:
-Prisma Client - клиент для подключения к БД, Prisma Migrate - инструмент для миграции данных,
-Prisma Studio - приложение для манипулирования данными напрямую в БД, что-то вроде
-SQL Management Studio.
+Призма, призма фреймворк, это семейство инстурументов для работы с базой данных,
+которое включает:
+Prisma Client - клиент для подключения к базой данных, Prisma Migrate -
+инструмент для миграции данных.
+Prisma Studio - приложение для манипулирования
+данными напрямую в БД, что-то вроде SQL Management Studio.  
 Я сегодня в основном буду рассказывать про Prisma Client.
 
 ---
@@ -54,7 +59,7 @@ SQL Management Studio.
 
 ???
 
-Сначала, давайте посмотрим, какие существуют способы работы с БД.
+Сначала, давайте посмотрим, какие существуют способы работы с базой данных.
 Все их можно разделить на 3 категории
 
 ---
@@ -97,10 +102,12 @@ const result = await client.query('SELECT $1::text as message', ['Hello']);
 подключение, авторизация, запросы и т.д.
 
 _Недостатки_ такого способа.
-Для того чтобы забрать данные, мы теперь пишем на каком-то другом языке, как правило это SQL
-или его диалект. Понятно, что абстрации тут никакой нет. Разработчику нужно делать много ручной работы:
-перечислить все имена колонок таблиц, в перечислении можно ошибиться, и ошибка обнаружится только в рантайме,
-нужно знать структуру БД, чтобы соединить таблицы.
+Для того чтобы забрать данные, мы теперь пишем на каком-то другом языке,
+как правило это SQL или его диалект. Понятно, что абстрации тут никакой нет.
+Разработчику нужно делать много ручной работы:
+перечислить все имена колонок таблиц, в перечислении можно ошибиться,
+и ошибка обнаружится только в рантайме, нужно знать структуру базы данных,
+чтобы соединить таблицы.
 
 Но _Преимущество_ это полный контроль.
 
@@ -141,9 +148,13 @@ knex('users')
 
 ???
 
-QB добавляет уровень уровень абстракции к БД, и формально мы уже пишем на javascript-е.
-Т.е. вместо спецификаторов в SQL строке, мы используем методы select, join и т.д.
-Но все равно, мы должны держать в уме структуру БД, имена колонок, первичных ключей, внешних ключей.
+Query Builder добавляет уровень уровень абстракции к базе данных,
+и формально мы уже пишем на javascript-е.
+Т.е. вместо спецификаторов в SQL строке, мы используем методы select,
+join и т.д.
+Но все равно, мы должны держать в уме структуру базы данных, имена колонок,
+первичных ключей, внешних ключей.
+
 (Левая колонка это фичи, не достоинства/преимущества)
 
 ---
@@ -169,19 +180,20 @@ Object relational mapper, define your application models as classes
 
 -   Low Control
 -   [Object-Relational Impedance Mismatch](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch)
--   May Generate Complicated Queries ([N+1 Problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping))
+-   May Generate Complicated Queries
+    ([N+1 Problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping))
 -   Type Unsafety for Partial Database Queries
 
 ]
 ]
 
 ???
-В ORM мы абстрагируемся и работаем с сущностями, которые являются частью нашего приложения.
-Продуктивность выше.
-Еще преимущество, то что теперь не надо знать о стуктуре БД,
-как правило, в ORM есть инструменты миграции, они все сгенерируют.
-
-Из _недостатки_, у нас нет полного контроля над БД,
+В ORM мы полностью абстрагируемся и работаем с сущностями (обычно это классы),
+которые являются частью нашего приложения.
+Продуктивность в ORM выше.  
+И теперь необязательно знать о стуктуре базой данных.  
+Как правило, в ORM есть инструменты миграции, они все сгенерируют.  
+Из _недостатков_, у нас нет полного контроля над базой данных,
 реализация скрыта, мы не знаем там происходит внутри,
 ORM может сгенерировать сложные (непроизводительные) запросы.
 N+1 проблема.
@@ -206,10 +218,11 @@ N+1 проблема.
 ![](./images/prisma-engines.png)
 
 ???
-Ваш код (из node.js) больше не работает с БД напрямую,
+Ваш код (из node.js) больше не работает с базой данных напрямую,
 а через Query Engine,
 Query Engine - исполняемый файл который написан на языке Rust.
-nodejs (prisma client) отправляет запрос какие данные мы хотим получить в rust binary (query engine),
+nodejs (prisma client) отправляет запрос в Query Engine
+какие данные мы хотим получить,
 rust binary (query engine) конвертирует его в SQL запрос и выполняет к базе данных.
 
 ---
@@ -238,11 +251,13 @@ model Post {
 ```
 
 ???
-Следующее отличие, модели описываются не в самой БД, не в классах. А специальном файле-схеме,
+Следующее отличие, модели описываются не в самой базе данных, не в классах.
+А специальном файле-схеме,
 написанном на языке Prisma Schema Language (PSL), похож на graphql.
 Чтобы получить такую схему:
 
-1. интроспектировать существующую бд (интроспектировать - получить тип и структуру объекта)
+1. интроспектировать существующую базу данных
+   (интроспектировать - получить тип и структуру объекта)
 2. либо описать модели вручную файле
    у модели есть свойства определяется как имя дальше тип модификатор обязательное поле или нет,
    атрибут с помощью которых можно описать отношения между моделями
@@ -263,20 +278,20 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-await prisma.connect();
+await prisma.$connect();
 // Working with database...
-await prisma.disconnect();
+await prisma.$disconnect();
 ```
 
 ???
 
 Самое важное.
-На основе этой схемы будет сгенерирован код клиента, для работы с БД.
+На основе этой схемы будет сгенерирован код клиента, для работы с базой.
 Как выглядят запросы.
 
 ---
 
-# OpenCRUD
+# Generated methods
 
 -   findOne
 -   findMany
@@ -288,8 +303,8 @@ await prisma.disconnect();
 -   etc.
 
 ???
-Для запроса и мутаций данных, для каждой сущности,
-будут сгенерированы следующие методы, по спецификации.
+Для запроса и мутаций данных, для каждой модели,
+будут сгенерированы методы, по спецификации.
 
 ---
 
@@ -382,3 +397,23 @@ export type FindManyUserArgs = {
 cursor - для ключи для cursor пагинации
 take - сколько первых лимит в терминах sql
 skip - offset в терминах sql
+
+---
+
+# Competitors
+
+-   **Sqlmancer** - Conjure SQL from GraphQL queries
+    https://github.com/danielrearden/sqlmancer
+-   **PgTyped** - Typesafe SQL in TypeScript
+    https://github.com/adelsz/pgtyped
+-   **TypeSQL** - Generate Typescript API from raw MySQL queries
+    https://github.com/wsporto/typesql
+
+???
+
+---
+
+# Built with Prisma
+
+-   **RedwoodJS** - Bringing full-stack to the Jamstack https://redwoodjs.com/
+-   **Blitz.js** - The Fullstack React Framework — built on Next.js https://blitzjs.com/
