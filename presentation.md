@@ -29,6 +29,8 @@ class: no-inverse
 
 ---
 
+class: no-inverse
+
 # Prisma
 
 Next-generation database tooling
@@ -51,6 +53,8 @@ Prisma Studio - приложение для манипулирования
 
 ---
 
+class: no-inverse
+
 # Comparison of tools
 
 -   Native Driver
@@ -63,6 +67,8 @@ Prisma Studio - приложение для манипулирования
 Все их можно разделить на 3 категории
 
 ---
+
+class: no-inverse
 
 # Native Driver
 
@@ -113,6 +119,8 @@ _Недостатки_ такого способа.
 
 ---
 
+class: no-inverse
+
 # Query Builder
 
 Adds a layer of abstraction above raw database-native querying (e.g.&nbsp;`knex.js`)
@@ -150,7 +158,7 @@ knex('users')
 
 Query Builder добавляет уровень уровень абстракции к базе данных,
 и формально мы уже пишем на javascript-е.
-Т.е. вместо спецификаторов в SQL строке, мы используем методы select,
+Т.е. вместо ключевых слов в SQL строке, мы используем методы select,
 join и т.д.
 Но все равно, мы должны держать в уме структуру базы данных, имена колонок,
 первичных ключей, внешних ключей.
@@ -158,6 +166,8 @@ join и т.д.
 (Левая колонка это фичи, не достоинства/преимущества)
 
 ---
+
+class: no-inverse
 
 # ORM
 
@@ -201,6 +211,8 @@ N+1 проблема.
 
 ---
 
+class: no-inverse
+
 # Prisma Client
 
 ![](./images/prisma-client.png)
@@ -212,6 +224,8 @@ N+1 проблема.
 Чем же призма принципиально отличается от существующих инструментов?
 
 ---
+
+class: no-inverse
 
 # How it works
 
@@ -226,6 +240,8 @@ nodejs (prisma client) отправляет запрос в Query Engine
 rust binary (query engine) конвертирует его в SQL запрос и выполняет к базе данных.
 
 ---
+
+class: no-inverse
 
 # Data Model
 
@@ -267,6 +283,8 @@ model Post {
 
 ---
 
+class: no-inverse
+
 # Generate Prisma Client
 
 ```sh
@@ -291,6 +309,8 @@ await prisma.$disconnect();
 
 ---
 
+class: no-inverse
+
 # Generated methods
 
 -   findOne
@@ -303,10 +323,12 @@ await prisma.$disconnect();
 -   etc.
 
 ???
-Для запроса и мутаций данных, для каждой модели,
-будут сгенерированы методы, по спецификации.
+Для получения и изменения данных, будут сгенерированы методы,
+для каждой модели.
 
 ---
+
+class: no-inverse
 
 # Querying
 
@@ -330,7 +352,9 @@ export type UserWhereUniqueInput = {
 
 ---
 
-# Partial querying
+class: no-inverse
+
+# Partial
 
 ```javascript
 const user = await prisma.user.findOne({
@@ -349,7 +373,9 @@ console.log('user.email', user.email);
 
 ---
 
-# Nested querying
+class: no-inverse
+
+# Nested
 
 ```javascript
 const postsByAuthorWithAuthorInfo = await prisma.post.findMany({
@@ -369,6 +395,8 @@ const postsByAuthorWithAuthorInfo: (Post & {
 ???
 
 ---
+
+class: no-inverse
 
 # findMany()
 
@@ -392,13 +420,15 @@ export type FindManyUserArgs = {
 ```
 
 ???
-Помимо условий, какие поля выбрать, в findMany() есть дополнительные
-параметры - order by - сортировка?
-cursor - для ключи для cursor пагинации
-take - сколько первых лимит в терминах sql
+Помимо условий, какие поля выбрать, в findMany() есть дополнительные  
+параметры - order by - сортировка?  
+cursor - для ключи для cursor пагинации  
+take - сколько первых лимит в терминах sql  
 skip - offset в терминах sql
 
 ---
+
+class: no-inverse
 
 # Competitors
 
@@ -412,6 +442,8 @@ skip - offset в терминах sql
 ???
 
 ---
+
+class: no-inverse
 
 # Built with Prisma
 
