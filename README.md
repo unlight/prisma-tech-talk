@@ -73,6 +73,7 @@
     -   06:37:42 - Closing
 -   https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/
 -   https://medium.com/better-programming/prisma-vs-typeorm-60d02f9dac64
+-   https://www.youtube.com/watch?v=lF8DV_ICIpY Prisma - The Easiest Way to Work with a Database in Next.js
 
 ## FAQ
 
