@@ -74,6 +74,10 @@
 -   https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/
 -   https://medium.com/better-programming/prisma-vs-typeorm-60d02f9dac64
 -   https://www.youtube.com/watch?v=lF8DV_ICIpY Prisma - The Easiest Way to Work with a Database in Next.js
+-   https://www.youtube.com/watch?v=a6afTgE3btI - Prisma Roadmap
+-   https://www.prisma.io/docs/concepts/more/comparisons
+-   https://www.prisma.io/docs/concepts/overview/prisma-in-your-stack/is-prisma-an-orm
+-   https://www.prisma.io/dataguide/database-tools/top-nodejs-orms-query-builders-and-database-libraries-in-2020
 
 ## FAQ
 
@@ -106,6 +110,7 @@ https://github.com/prisma/prisma/issues/2377
 #### Atomic operations
 
 https://github.com/prisma/prisma-client-js/issues/655
+https://www.prisma.io/docs/concepts/components/prisma-client/crud#atomic-operations-on-update
 
 #### ORM can resolve n + 1 problem too
 
