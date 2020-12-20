@@ -21,6 +21,8 @@
 ## Resources
 
 -   https://isprisma2ready.com/
+-   https://www.prisma.io/docs/concepts/overview/what-is-prisma
+-   https://www.prisma.io/docs/concepts/components/prisma-client/crud
 -   https://github.com/prisma/prisma
 -   https://www.prisma.io/docs/understand-prisma/why-prisma/
 -   https://www.prisma.io/docs/understand-prisma/introduction
@@ -122,8 +124,9 @@ In this example I must define it as column definition, what if need both lazy an
 
 #### Why ORM is Partial Typesafety
 
-https://sequelize.org/master/manual/typescript.html#usage (bottom,
-before "Usage without strict types for attributes" section, spot "!")
+https://sequelize.org/master/manual/typescript.html#usage (bottom of
+section Usage, before "Usage without strict types for attributes" section,
+spot "console.log(ourUser.projects![0].name")
 
 #### Why middleware as query engine is needed
 

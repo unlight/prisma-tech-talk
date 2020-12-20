@@ -1,5 +1,5 @@
 /*@import url('https://fonts.googleapis.com/css?family=Inconsolata|Ubuntu|Open+Sans|Lato|Play|Roboto+Slab|Montserrat|Source+Sans+Pro');*/
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 @page {
     size: 908px 681px;
@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    font-family: 'Lato', 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     font-size: 1rem;
 }
 

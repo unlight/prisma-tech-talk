@@ -313,8 +313,9 @@ class: no-inverse
 
 # Generated methods
 
--   findOne
+-   findUnique
 -   findMany
+-   findFirst
 -   create
 -   delete
 -   update
@@ -330,23 +331,26 @@ class: no-inverse
 
 class: no-inverse
 
-# Querying
+# Find One
+
+The `findUnique` query lets you retrieve a single database record by _ID_
+or another _unique_ attribute.
 
 ```javascript
-const user = await prisma.user.findOne({ where: { id: 1 } });
+const user = await prisma.user.findUnique({ where: { id: 1 } });
 console.log('user.email', user.email);
 ```
 
-```javascript
+```typescript
 export type UserWhereUniqueInput = {
-    id?: number,
-    email?: string,
+    id?: number | null;
+    email?: string | null;
 };
 ```
 
 ???
 Причем будут и сгенерированы и типы для параметров которые принимают эти методы.
-Где-то внутри будет сгенерирован тип `UserWhereUniqueInput`
+Где-то внутри будет сгенерирован тип `UserWhereUniqueInput` с полями id и email.
 Т.е. никакой `name` в Where передать нельзя, потому согласно схеме у нас id - это идентификатор,
 а email - уникальный.
 
@@ -354,10 +358,12 @@ export type UserWhereUniqueInput = {
 
 class: no-inverse
 
-# Partial
+# Retrieve Partial
+
+`select` specifies which properties to include on the returned object.
 
 ```javascript
-const user = await prisma.user.findOne({
+const user = await prisma.user.findUnique({
     where: { id: 42 },
     select: { id: true, name: true },
 });
@@ -375,30 +381,42 @@ console.log('user.email', user.email);
 
 class: no-inverse
 
-# Nested
+# Nested Objects
+
+`include` specifies which relations should be eagerly loaded on the
+returned object.
 
 ```javascript
-const postsByAuthorWithAuthorInfo = await prisma.post.findMany({
-    where: {
-        author: { id: 42 },
-    },
+const postsByAuthorWithAuthorInfo = await prisma.post.findUnique({
     include: {
         author: true,
     },
 });
 
-const postsByAuthorWithAuthorInfo: (Post & {
-    author: User;
-})[];
+const postsByAuthorWithAuthorInfo: Post & {
+    author: User,
+};
 ```
 
 ???
+
+Если необходимо выбрать связные объекта, то можно использовать параметр `include`.
+Это выберет автора записи (все поля), и опять же тут все будет типизировано,
+на выходе так и на входе, т.е. никакие посторонние свойства в `include`,
+которые не предусмотрены схемой, передать нельзя.  
+Возвращаемый объект будет типа объект типа Post + свойство author - вложенный
+объект типа User.  
+Во всех случаях возвращаются обычные javascript объекты.
 
 ---
 
 class: no-inverse
 
-# findMany()
+# Find Many
+
+The `findMany` query returns a list of records. You can use the `select`
+and `include` options to determine which properties the returned objects should include.
+You can also paginate, filter and order the list.
 
 ```javascript
 const allUsers = await prisma.user.findMany(args);
@@ -430,16 +448,61 @@ skip - offset в терминах sql
 
 class: no-inverse
 
-# Competitors
+# Filter
 
--   **Sqlmancer** - Conjure SQL from GraphQL queries
-    https://github.com/danielrearden/sqlmancer
--   **PgTyped** - Typesafe SQL in TypeScript
-    https://github.com/adelsz/pgtyped
--   **TypeSQL** - Generate Typescript API from raw MySQL queries
-    https://github.com/wsporto/typesql
+Filter all Post records that contain "prisma" and
+id strict greater than 42.
+
+```javascript
+const filteredPosts = await prisma.post.findMany({
+    where: {
+        id: { gt: 42 },
+        OR: [
+            { title: { contains: 'prisma' } },
+            { content: { contains: 'prisma' } },
+        ],
+    },
+});
+```
 
 ???
+Еще про поиск записей, тип параметра `where` будет сгенерирован
+в зависимости от моделей...
+
+---
+
+class: no-inverse
+
+# Prisma Supports
+
+-   PostgreSQL
+-   MySQL
+-   SQLite
+-   SQL Server (preview)
+-   MongoDB (planned)
+
+???
+Есть поддержка популярных БД.
+
+---
+
+class: no-inverse
+
+# Competitors
+
+-   **PgTyped** - Typesafe SQL in TypeScript  
+    https://github.com/adelsz/pgtyped
+-   **TypeSQL** - Generate Typescript API from raw MySQL queries  
+    https://github.com/wsporto/typesql
+-   **ts-sql-query** - Type-safe SQL query builder  
+    https://github.com/juanluispaz/ts-sql-query
+-   **SQLTyped** - typesafe SQL DSL implementation in TypeScript  
+    https://github.com/joshdover/sql-typed
+-   **Sqlmancer** - Conjure SQL from GraphQL queries  
+     https://github.com/danielrearden/sqlmancer
+
+???
+Недавно стали появляться...
 
 ---
 

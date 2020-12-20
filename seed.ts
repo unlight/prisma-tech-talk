@@ -28,5 +28,12 @@ const prisma = new PrismaClient();
         },
     });
 
+    await prisma.post.findMany({
+        where: {
+            id: { gt: 1 },
+            OR: [{ title: { contains: 'prisma' } }, { id: { gt: 1 } }],
+        },
+    });
+
     await prisma.$disconnect();
 })();
