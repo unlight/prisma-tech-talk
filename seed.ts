@@ -35,5 +35,11 @@ const prisma = new PrismaClient();
         },
     });
 
+    const postsByAuthorWithAuthorInfo = await prisma.post.findMany({
+        include: {
+            author: true,
+        },
+    });
+
     await prisma.$disconnect();
 })();

@@ -58,10 +58,6 @@ code {
     font-family: 'Inconsolata', monospace;
 }
 
-h1 {
-    margin: 4% 0 2% 0;
-}
-
 .column-count-2 {
     column-count: 2;
 }
@@ -127,19 +123,19 @@ h1 {
 }
 
 .remark-slide-content h1 {
-    font-size: 250%;
+    font-size: 2rem;
 }
 
 .remark-slide-content h2 {
-    font-size: 200%;
+    font-size: 1.75rem;
 }
 
 .remark-slide-content h3 {
-    font-size: 150%;
+    font-size: 1.5rem;
 }
 
 .remark-slide-content h4 {
-    font-size: 100%;
+    font-size: 1.25rem;
 }
 
 .remark-slide-number {
